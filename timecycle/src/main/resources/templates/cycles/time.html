@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head lang="en">
+ <meta charset="UTF-8" />
+ <title>SprintCycle</title>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link th:href="@{/styles/main.css}" rel="stylesheet" />
+</head>
+<body>
+  <h1>Work time</h1>
+  <div>
+    <th:block th:each="sprint: ${sprints}">
+        <h3><a class="tune-text" th:text="${sprint.getCycle_amount()}"></h3>
+        <h4><a id="trackname" class="tune-text" th:text="${sprint.getCycle_time()}"></h4>
+        <h5><a th:text="${sprint.geBreak_time()}"></h5>
+    </th:block>
+  </div>
+  <div class="timer">
+  </div>
+  <script src="./styles/js/main.js" type="module"></script>
+</body>
+</html>

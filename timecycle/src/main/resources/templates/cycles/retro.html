@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head lang="en">
+ <meta charset="UTF-8" />
+ <title>SprintCycle</title>
+</head>
+<body>
+  <h1>Retro</h1>
+  <form class="" action="#" th:action="@{'/retro/{id}'(id=${sprint.id})}" th:object="${sprint}" method="post" enctype="multipart/form-data">
+    <p><input id="achievement" class="" type="text" th:field="*{achievement}" placeholder="What did I get done?" /></p>
+    <p><input id="issues" class="" type="text" th:field="*{issues}" placeholder="What issues did I encounter?" /></p>
+    <p><input id="went_well" class="" type="text" th:field="*{went_well}" placeholder="What went well?" /></p>
+    <p><input id="anything_else" class="" type="text" th:field="*{anything_else}" placeholder="Anything else to add?" /></p>
+    <input class="submit" type="submit" value="Submit" id="submit" />
+    <input class="reset" type="reset" value="Reset" />
+  </form>
+</body>
+</body>
+</html>

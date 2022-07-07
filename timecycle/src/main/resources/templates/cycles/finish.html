@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head lang="en">
+ <meta charset="UTF-8" />
+ <title>SprintCycle</title>
+</head>
+<body>
+  <h1>End of Cycle</h1>
+  <td th:each="cycle : ${cycles}">
+    <!-- Content -->
+    <div>
+      <h3><p th:text="${cycle.getGoal()}"></h3>
+      <h4><p th:text="${cycle.getProcess()}"></h4>
+    </div>         
+  </td>
+  <form class="" action="#" th:action="@{'/finish/{id}'(id=${cycle.id})}" th:object="${cycle}" method="post" enctype="multipart/form-data">
+    <!-- <input type="hidden" th:value="${cycle.goal}" id="goal" name="goal" />
+    <input type="hidden" th:value="${cycle.process}" id="process" name="process" />
+    <input type="hidden" th:value="${cycle.blockers}" id="blockers" name="blockers" />
+    <input type="hidden" th:value="${cycle.energy}" id="energy" name="energy" />
+    <input type="hidden" th:value="${cycle.morale}" id="morale" name="morale" /> -->
+    <p><input id="completion_level" class="" type="text" th:field="*{completion_level}" placeholder="How much did you complete?" /></p>
+    <p><input id="observations" class="" type="text" th:field="*{observations}" placeholder="Any observations" /></p>
+    <p><input id="issues" class="" type="text" th:field="*{issues}" placeholder="Any issues encountered?" /></p>
+    <p><input id="improvements" class="" type="text" th:field="*{improvements}" placeholder="Any improvements?" /></p>
+    <input class="submit" type="submit" value="Submit" id="submit" />
+    <input class="reset" type="reset" value="Reset" />
+  </form>
+</body>
+</html>
