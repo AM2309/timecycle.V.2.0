@@ -11,6 +11,6 @@ public class HomepageController {
  @RequestMapping(value = "/")
 //  @GetMapping("/")
  public RedirectView index() {
-   return new RedirectView("/sprints/new");
+   return new RedirectView("sprints/new");
  }
 }

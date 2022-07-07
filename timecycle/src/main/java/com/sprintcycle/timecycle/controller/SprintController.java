@@ -25,5 +25,15 @@ public class SprintController {
   SprintRepository repository;
   @Autowired
   CycleRepository cycleRepository;
+
+  @GetMapping("sprints/new")
+  public String createSprint(Model model) {
+    Iterable<Sprint> sprints = repository.findAll();
+    model.addAttribute("sprints", sprints);
+    model.addAttribute("sprint", new Sprint());
+    return "sprints/new";
+  }
+  
+
 }
 
