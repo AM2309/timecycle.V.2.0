@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Cycle</h1>
-  <form class="" action="#" th:action="@{/cycles}" th:object="${cycle}" method="post" enctype="multipart/form-data">
+  <form class="" action="#" th:action="@{/cycles}" th:object="${cycle}" method="post" >
     <p><input id="goal" class="" type="text" th:field="*{goal}" placeholder="Goal" /></p>
     <p><input id="process" class="" type="text" th:field="*{process}" placeholder="How will I approach it?" /></p>
     <p><input id="blockers" class="" type="text" th:field="*{blockers}" placeholder="Potential blockers" /></p>

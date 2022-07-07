@@ -33,7 +33,32 @@ public class SprintController {
     model.addAttribute("sprint", new Sprint());
     return "sprints/new";
   }
+
+  @PostMapping("sprints")
+  public RedirectView save(@ModelAttribute Sprint sprint, @RequestParam String name, @RequestParam String goals, @RequestParam String measurement, 
+  @RequestParam String success, @RequestParam String other, @RequestParam Integer cycle_amount, 
+  @RequestParam Integer cycle_time, @RequestParam Integer break_time) {
+    sprint.setName(name);
+    sprint.setGoals(goals);
+    sprint.setMeasurement(measurement);
+    sprint.setSuccess(success);
+    sprint.setOther(other);
+    sprint.setCycle_amount(cycle_amount);
+    sprint.setCycle_time(cycle_time);
+    sprint.setBreak_time(break_time);
+
+    repository.save(sprint);
+    return new RedirectView("/total");
+  }
   
+  @GetMapping("total")
+  public String showAll(Model model) {
+    // Iterable<Sprint> sprint = repository.findByName(name);
+    // model.addAttribute("sprint", sprint);
+    Iterable<Sprint> sprints = repository.findAll();
+    model.addAttribute("sprints", sprints);
+    return "sprints/total";
+  }  
 
 }
 

@@ -4,8 +4,8 @@
  <meta charset="UTF-8" />
  <title>SprintCycle</title>
 </head>
-<!-- <body> 
-    <form action ="#" th:action="@{/sprints/sprint/}" th:object="${sprint}" method="get" enctype="multipart/form-data">
+<body> 
+    <form action ="#" th:action="@{/sprints/total/}" th:object="${sprint}" method="get" enctype="multipart/form-data">
       <th:block th:each="sprint : ${sprints}">
         <div th:text="${sprint.getGoals()}"></div>
         <div id="measurement"  th:text="${sprint.getMeasurement()}" ></div>
@@ -19,10 +19,10 @@
           </form>
       </th:block>
     </form> 
-</body> -->
+</body>
 
-<body>HELLO
-  <!-- <form action ="#" th:action="@{/sprints/sprint}" th:object="${sprint}" method="get" >
+<!-- <body>HELLO
+  <form action ="#" th:action="@{/sprints/sprint}" th:object="${sprint}" method="get" >
     <a class="select-a-genre">Select a sprint:</a>
     <p><input type="text" name="name" placeholder="NAME"/></p>
     <input class="submit" type="submit" value="Submit" id="submit" /> 
@@ -35,4 +35,4 @@
       <!-- above is the button to add to favourites, every song had one, and we get that id of the specific song to add in our favourites -->
     <!-- </form>
   </th:block> -->
-</body>
+<!-- </body> -->

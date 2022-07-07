@@ -26,5 +26,26 @@ public class CycleController {
   @Autowired 
   SprintRepository sprintRepository;
 
+  @GetMapping("sprint/{id}")
+  public String newCycle(Model model) {
+    Iterable<Cycle> cycles = repository.findAll();
+    model.addAttribute("cycles", cycles);
+    model.addAttribute("cycle", new Cycle());
+    return "cycles/settings";
+  }
+
+  @PostMapping("/cycles")
+  public RedirectView save(@ModelAttribute Cycle cycle, @RequestParam String goal, @RequestParam String process, @RequestParam String blockers, @RequestParam String energy, @RequestParam String morale) {
+    cycle.setGoal(goal);
+    cycle.setProcess(process);
+    cycle.setBlockers(blockers);
+    cycle.setEnergy(energy);
+    cycle.setMorale(morale);
+// this could probably be done when the rest of the table gets populated, so then it is all together
+// to change after I get the html sorted and start work on feed page...
+    repository.save(cycle);
+    return new RedirectView("/time");
+  }
+
   
 }

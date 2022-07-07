@@ -7,5 +7,5 @@ import com.sprintcycle.timecycle.model.Sprint;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface SprintRepository extends PagingAndSortingRepository<Sprint, Long>{
-
+  List<Sprint> findByName(String name);
 }
