@@ -34,19 +34,6 @@ public class Sprint {
   String anything_else;
 
 
-  @OneToMany(cascade = CascadeType.ALL)
-  @JoinTable(name = "session",
-              joinColumns = @JoinColumn(name = "sprint_id"),
-              inverseJoinColumns = @JoinColumn(name = "cycle_id"))
-  public Set<Cycle> cycles;
-  
-
-  // @ManyToOne
-  // @JoinColumn(name = "cycle_id")
-  // Cycle cycle;
-
-
-
   @OneToMany(mappedBy="sprint")
   private Set<Cycle> cycle;
   

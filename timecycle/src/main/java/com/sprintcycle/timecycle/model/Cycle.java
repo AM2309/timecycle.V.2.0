@@ -38,13 +38,7 @@ public class Cycle {
     this.morale = morale;
   }
 
-  // public Cycle(String completion_level, String observations, String issues, String improvements, Long id) {
-  //   this.completion_level = completion_level;
-  //   this.observations = observations;
-  //   this.issues = issues;
-  //   this.improvements = improvements;
-  //   this.id = id;
-  // }
+
 
   public Cycle(String goal, String process, String blockers, String energy, String morale, String completion_level,
   String observations, String issues, String improvements) {
