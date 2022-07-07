@@ -101,3 +101,9 @@ I would like to be able to have background noises.
 ## Mock-up 
 
 ![New Wireframe 1](https://user-images.githubusercontent.com/80968551/144890947-5564dc54-55b0-4413-964a-b6146674e070.png)
+
+## Database
+1. docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres
+2. docker exec -it postgres-db psql -U postgres 
+3. CREATE DATABASE timecycle;
+- some changes in the model and migration file will require RESET DATABASE timecycle;, followed by creating the database again.
